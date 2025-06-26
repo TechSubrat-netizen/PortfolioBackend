@@ -1,12 +1,10 @@
 import  express from 'express';
 import connectDb from './config/connectDb.js';
+import emailRoute from './Routes/emailRoute.js';
 const app= express();
+//Routing
+app.use('/email',emailRoute)
 
-
-//API's
-app.get('/',((req,res)=>{
-    res.send('HEllo world')
-}))
 //Database connection
 connectDb()
 
